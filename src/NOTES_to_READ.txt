@@ -1,0 +1,5 @@
+Recall that:
+
+   X // Y   gives the integer   when one divides Y into X (rounds down)
+   X % Y    gives the remainder when one divides Y into X
+
