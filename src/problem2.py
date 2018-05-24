@@ -20,7 +20,7 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
     run_test_problem2a()
-    # run_test_problem2b()
+    run_test_problem2b()
     # run_test_problem2c()
 
 
@@ -257,9 +257,22 @@ def problem2b(sequence):
       :type sequence  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    length = len(sequence)
+    number_holder = abs(sequence[0])
+    best_match = 0
+    for k in range(0,length ):
+        if number_holder < abs(sequence[k]):
+            number_holder = abs(sequence[k])
+            #print(number_holder)
+            #print(abs(sequence[k]))
+            best_match = k
+            #print(best_match)
+    return best_match
+
+
 
 
 def run_test_problem2c():
