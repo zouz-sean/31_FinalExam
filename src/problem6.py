@@ -30,6 +30,10 @@ def run_test_shape():
     print('Test 3 of shape: n=14')
     shape(14)
 
+    print()
+    print('Test 4 of shape: n=100')
+    shape(100)
+
 
 def shape(n):
     ####################################################################
@@ -93,7 +97,7 @@ And this one for n=14:
             print(' ', end='')
         for j in range (k+1):
             stuff = j+1
-            if stuff>9:
+            while stuff>9:
                 stuff = stuff%10
             print(stuff,end = '')
         print(' ', end='')
