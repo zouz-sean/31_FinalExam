@@ -21,7 +21,7 @@ def main():
     print(' to run the testing code as you complete the TODOs.')
     run_test_problem2a()
     run_test_problem2b()
-    # run_test_problem2c()
+    run_test_problem2c()
 
 
 def is_prime(n):
@@ -413,9 +413,19 @@ def problem2c(x):
       :type x:    int
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    marker2 = False
+    while marker2 == False:
+        marker1 = is_prime(x)
+        if marker1 == True:
+            sum = sum_of_digits(x)
+            marker2 = is_prime(sum)
+
+        collector = x
+        x = x + 1
+    return collector
 
 
 ###############################################################################
