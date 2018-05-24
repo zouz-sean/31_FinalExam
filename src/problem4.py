@@ -4,11 +4,11 @@ Final exam, problem 4.
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
          their colleagues and Zhengxiao Zou.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 ###############################################################################
-# TODO: 2.
+# DONE: 2.
 #   In this problem, you will go through the methods of the  Pig  class
 #   that is defined below, one by one, in the order that they appear.
 #   For each method:
@@ -28,6 +28,20 @@ def main():
     #     -- Construct two Pig objects
     #     -- Call each method that you implement below.
     # -------------------------------------------------------------------------
+    pig1 = Pig(100)
+    print('the weight of the pig1 is:',pig1.w)
+    w1 = pig1.get_weight()
+    print('the pig1 weight using get weight function:',w1)
+    pig1.eat(100)
+    print('New pig weight after eating 100:',pig1.w)
+    pig1.eat_for_a_year()
+    print('New pig weight after eating for a year(a pound a day):', pig1.w)
+    pig2 = Pig(300)
+    print('the weight of the pig2 is:', pig1.w)
+    the_heacy_pig = pig1.heavier_pig(pig2)
+    print('This is the weight of the heavier pig:',the_heacy_pig.get_weight())
+    pig3 = pig1.new_pig(pig2)
+    print('This is the weight of the new pig:', pig3.get_weight())
 
 
 class Pig(object):
@@ -36,18 +50,20 @@ class Pig(object):
         What comes in:  The Pig's weight (in pounds).
         Side effects: Sets instance variables as needed by the other methods.
         """
-        # TODO: Implement and test this method.
+        # DONE: Implement and test this method.
+        self.w = weight
 
     def get_weight(self):
         """ Returns this Pig's weight. """
-        # TODO: Implement and test this method.
+        # DONE: Implement and test this method.
+        return self.w
 
     def eat(self, pounds_of_slop):
         """
         Increments this Pig's weight by the given pounds_of_slop.
         """
-        # TODO: Implement and test this method.
-
+        # DONE: Implement and test this method.
+        self.w = self.w + pounds_of_slop
     def eat_for_a_year(self):
         """
         Calls the   eat   method as many times as needed to make this Pig:
@@ -58,21 +74,33 @@ class Pig(object):
           -- eat 364 pounds of slop, then
           -- eat 365 pounds of slop.
         """
-        # TODO: Implement and test this method.
+        # DONE: Implement and test this method.
+        for k in range (365):
+            self.eat(1)
 
     def heavier_pig(self, other_pig):
         """
         Returns either this Pig object or the other given Pig object,
         whichever is heavier.
         """
-        # TODO: Implement and test this method.
+        # DONE: Implement and test this method.
+        if self.w > other_pig.w:
+            return self
+        else:
+            return other_pig
 
     def new_pig(self, other_pig):
         """
         Returns a new Pig whose weight is the weight of the heavier
           of this Pig and the other_Pig.
         """
-        # TODO: Implement and test this method.
+        # DONE: Implement and test this method.
+        if self.w > other_pig.w:
+            newpig = self
+        else:
+            newpig = other_pig
+        return newpig
+
 
 
 # -----------------------------------------------------------------------------
