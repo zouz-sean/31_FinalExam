@@ -75,7 +75,7 @@ And this one for n=14:
     :type n: int
     """
     # ------------------------------------------------------------------
-    # TODO: Implement and test this function.
+    # DONE: Implement and test this function.
     #          Some tests are already written for you (above).
     ####################################################################
     # IMPORTANT: In solving this problem,
@@ -87,9 +87,24 @@ And this one for n=14:
     #   print Xs for the spaces until you figure out where the problem is
     #   (and then change the Xs back to spaces).
     # ------------------------------------------------------------------
+    stuff = 1 #testing variable
     for k in range (n):
-        for j in range (-k+n+1):
-            print(k+j,end = '')
+        for q in range(n-k):
+            print(' ', end='')
+        for j in range (k+1):
+            stuff = j+1
+            if stuff>9:
+                stuff = stuff%10
+            print(stuff,end = '')
+        print(' ', end='')
+        for star in range (k+2):
+            print('*', end='')
+        print(' ', end='')
+        for moor in range (n-k):
+            stuff = n-(moor+k)
+            if stuff>9:
+                stuff = stuff%10
+            print(stuff,end = '')
         print()
 
 
