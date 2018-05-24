@@ -75,8 +75,8 @@ class Pig(object):
           -- eat 365 pounds of slop.
         """
         # DONE: Implement and test this method.
-        for k in range (365):
-            self.eat(1)
+        for k in range (365+1):
+            self.eat(k)
 
     def heavier_pig(self, other_pig):
         """
